@@ -1,0 +1,26 @@
+{
+  "title": "Selamat Datang ke Grup Gerak Khas! 🎉",
+  "description": "Grup Gerak Khas adalah organisasi yang berdedikasi untuk memberikan perkhidmatan terbaik kepada masyarakat.",
+  "about": "Kami berkomitmen untuk memastikan keselamatan dan kesejahteraan semua.",
+  "services": {
+    "title": "Perkhidmatan Kami",
+    "list": [
+      "Kepimpinan dan Latihan 🏋️‍♂️",
+      "Keselamatan Awam 🚓",
+      "Perkhidmatan Kecemasan 🚑"
+    ]
+  },
+  "contact": {
+    "title": "Hubungi Kami",
+    "email": "email@grupgerakkhas.com",
+    "phone": "+6012-3456789"
+  },
+  "footer": {
+    "copyright": "© 2023 Grup Gerak Khas. Semua hak terpelihara."
+  },
+  "languageSwitcher": {
+    "label": "Pilih Bahasa:",
+    "malay": "Bahasa Melayu 🇲🇾",
+    "english": "English 🇬🇧"
+  }
+}
