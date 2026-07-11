@@ -1,5 +1,5 @@
 /* ══════════════════════════════════════════════════════
-   Grup Gerak Khas — Premium Dark Military Theme
+   Grup Gerak Khas — Premium Dark Military Theme (Pure CSS)
    ══════════════════════════════════════════════════════ */
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Rajdhani:wght@500;600;700&display=swap');
@@ -8,8 +8,8 @@
 :root {
   --bg-base:       #060c08;
   --bg-surface:    #0d1810;
-  --bg-card:       rgba(10, 35, 15, 0.65);
-  --bg-card-hover: rgba(15, 50, 22, 0.75);
+  --bg-card:       rgba(10, 35, 15, 0.6);
+  --bg-card-hover: rgba(15, 50, 22, 0.7);
   --primary:       #00e676;
   --primary-dim:   #00b34a;
   --primary-glow:  rgba(0, 230, 118, 0.25);
@@ -36,16 +36,23 @@
 
 html { scroll-behavior: smooth; font-size: 16px; }
 
+#three-canvas-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  pointer-events: none;
+  background-color: var(--bg-base);
+}
+
 body {
   font-family: var(--font-body);
-  background-color: var(--bg-base);
+  background-color: transparent;
   color: var(--text-primary);
   line-height: 1.6;
   overflow-x: hidden;
-  background-image:
-    radial-gradient(ellipse 80% 60% at 50% -10%, rgba(0,230,118,0.08) 0%, transparent 70%),
-    radial-gradient(ellipse 60% 40% at 80% 100%, rgba(0,100,40,0.06) 0%, transparent 60%);
-  background-attachment: fixed;
 }
 
 a { text-decoration: none; color: inherit; }
@@ -135,6 +142,7 @@ img { max-width: 100%; display: block; }
 .btn-outline {
   border-color: var(--border-hover);
   color: var(--primary);
+  background: transparent;
 }
 .btn-outline:hover {
   background: var(--primary-glow);
@@ -268,61 +276,20 @@ img { max-width: 100%; display: block; }
   padding-top: 80px;
 }
 
-/* Animated grid background */
+/* Animated grid background overlay */
 .hero-bg-grid {
   position: absolute;
   inset: 0;
   background-image:
-    linear-gradient(rgba(0,230,118,0.05) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(0,230,118,0.05) 1px, transparent 1px);
+    linear-gradient(rgba(0,230,118,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,230,118,0.03) 1px, transparent 1px);
   background-size: 60px 60px;
-  animation: grid-drift 20s linear infinite;
+  animation: grid-drift 25s linear infinite;
   pointer-events: none;
 }
 @keyframes grid-drift {
   0%   { background-position: 0 0; }
   100% { background-position: 60px 60px; }
-}
-
-/* Floating particles */
-.hero-particles { position: absolute; inset: 0; pointer-events: none; }
-.particle {
-  position: absolute;
-  width: 2px;
-  height: 2px;
-  background: var(--primary);
-  border-radius: 50%;
-  opacity: 0;
-  animation: float-up 8s infinite;
-}
-.particle:nth-child(odd)  { left: calc(var(--i, 5) * 5%); animation-delay: calc(var(--i, 1) * -0.5s); }
-.particle:nth-child(even) { left: calc(var(--i, 3) * 7%); animation-delay: calc(var(--i, 2) * -0.8s); }
-/* Assign random positions via nth-child */
-.particle:nth-child(1)  { --i:1;  left:5%;  animation-duration: 7s; }
-.particle:nth-child(2)  { --i:2;  left:10%; animation-duration: 9s; }
-.particle:nth-child(3)  { --i:3;  left:17%; animation-duration: 6s; }
-.particle:nth-child(4)  { --i:4;  left:24%; animation-duration: 11s; }
-.particle:nth-child(5)  { --i:5;  left:31%; animation-duration: 8s; }
-.particle:nth-child(6)  { --i:6;  left:38%; animation-duration: 10s; }
-.particle:nth-child(7)  { --i:7;  left:45%; animation-duration: 7s; }
-.particle:nth-child(8)  { --i:8;  left:52%; animation-duration: 9s; }
-.particle:nth-child(9)  { --i:9;  left:59%; animation-duration: 6s; }
-.particle:nth-child(10) { --i:10; left:66%; animation-duration: 12s; }
-.particle:nth-child(11) { --i:11; left:73%; animation-duration: 8s; }
-.particle:nth-child(12) { --i:12; left:80%; animation-duration: 7s; }
-.particle:nth-child(13) { --i:13; left:87%; animation-duration: 10s; }
-.particle:nth-child(14) { --i:14; left:93%; animation-duration: 9s; }
-.particle:nth-child(15) { --i:15; left:3%;  animation-duration: 6s; }
-.particle:nth-child(16) { --i:16; left:21%; animation-duration: 11s; }
-.particle:nth-child(17) { --i:17; left:42%; animation-duration: 8s; }
-.particle:nth-child(18) { --i:18; left:63%; animation-duration: 7s; }
-.particle:nth-child(19) { --i:19; left:77%; animation-duration: 9s; }
-.particle:nth-child(20) { --i:20; left:95%; animation-duration: 6s; }
-
-@keyframes float-up {
-  0%   { bottom: -10%; opacity: 0; transform: scale(1); }
-  20%  { opacity: 0.8; }
-  100% { bottom: 110%; opacity: 0; transform: scale(0); }
 }
 
 .hero-content {
@@ -468,7 +435,6 @@ img { max-width: 100%; display: block; }
 /* ═══════════════════════════════════════════════════════
    SERVICES
 ══════════════════════════════════════════════════════ */
-.services { background: radial-gradient(ellipse 70% 50% at 50% 50%, rgba(0,230,118,0.04) 0%, transparent 70%); }
 .services-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));

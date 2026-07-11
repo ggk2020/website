@@ -1,32 +1,208 @@
 <!DOCTYPE html>
 <html lang="ms">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Grup Gerak Khas | Official Website</title>
-    <meta name="description" content="Laman web rasmi Grup Gerak Khas – organisasi keselamatan dan pertahanan negara Malaysia. Official website of Grup Gerak Khas – Malaysia's special security and defense organization." />
-    <meta name="theme-color" content="#00e676" />
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grup Gerak Khas | Official Website</title>
+  <meta name="description" content="Laman web rasmi Grup Gerak Khas – organisasi keselamatan dan pertahanan negara Malaysia. Official website of Grup Gerak Khas – Malaysia's special security and defense organization.">
+  <meta name="theme-color" content="#00e676">
 
-    <!-- Open Graph -->
-    <meta property="og:title" content="Grup Gerak Khas" />
-    <meta property="og:description" content="Protecting the Nation, Defending the People." />
-    <meta property="og:type" content="website" />
+  <!-- Open Graph -->
+  <meta property="og:title" content="Grup Gerak Khas">
+  <meta property="og:description" content="Protecting the Nation, Defending the People.">
+  <meta property="og:type" content="website">
 
-    <!-- Preconnect for Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  </head>
-  <body>
-    <!-- Header injected by Header.ts -->
-    <div id="header"></div>
+  <!-- Preconnect for Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <!-- Main content injected by main.ts -->
-    <div id="main"></div>
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-    <!-- Footer injected by Footer.ts -->
-    <div id="footer"></div>
+  <!-- Three.js Canvas Container background -->
+  <div id="three-canvas-container"></div>
 
-    <!-- Vite entry point -->
-    <script type="module" src="/src/main.ts"></script>
-  </body>
+  <!-- Header -->
+  <header class="site-header" id="site-header">
+    <div class="header-inner">
+      <div class="logo">
+        <span class="logo-icon">⚔️</span>
+        <span class="logo-text">Grup Gerak Khas</span>
+      </div>
+      <nav class="nav" id="main-nav">
+        <a href="#hero" class="nav-link" data-section="hero" data-translate="nav.home">Utama</a>
+        <a href="#about" class="nav-link" data-section="about" data-translate="nav.about">Tentang</a>
+        <a href="#services" class="nav-link" data-section="services" data-translate="nav.services">Perkhidmatan</a>
+        <a href="#contact" class="nav-link" data-section="contact" data-translate="nav.contact">Hubungi</a>
+      </nav>
+      <div class="header-actions">
+        <button class="lang-btn" id="lang-btn" aria-label="Switch language">🇬🇧 English</button>
+        <button class="menu-toggle" id="menu-toggle" aria-label="Toggle menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main id="main">
+    
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+      <div class="hero-bg-grid"></div>
+      <div class="hero-content">
+        <div class="hero-badge" data-translate="hero.badge">🇲🇾 Grup Gerak Khas</div>
+        <h1 class="hero-title" data-translate="hero.title">Bersama Kita Maju 🚀</h1>
+        <p class="hero-subtitle" data-translate="hero.subtitle">Melindungi Negara, Mempertahankan Bangsa.</p>
+        <div class="hero-actions">
+          <a href="#services" class="btn btn-primary" data-translate="hero.cta">Ketahui Lebih Lanjut</a>
+          <a href="#contact" class="btn btn-outline" data-translate="hero.contact">Hubungi</a>
+        </div>
+        <div class="hero-stats">
+          <div class="stat-item">
+            <span class="stat-number">30+</span>
+            <span class="stat-label" data-translate="hero.stat1.label">Tahun Berkhidmat</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-item">
+            <span class="stat-number">6</span>
+            <span class="stat-label" data-translate="hero.stat2.label">Unit Khusus</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-item">
+            <span class="stat-number">100%</span>
+            <span class="stat-label" data-translate="hero.stat3.label">Komitmen</span>
+          </div>
+        </div>
+      </div>
+      <div class="hero-scroll-hint">
+        <span data-translate="hero.scroll">Tatal ke bawah</span>
+        <div class="scroll-arrow"></div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about section" id="about">
+      <div class="container">
+        <div class="section-header reveal">
+          <h2 class="section-title" data-translate="about.title">Tentang Kami</h2>
+          <div class="section-divider"></div>
+          <p class="section-subtitle" data-translate="about.desc"></p>
+        </div>
+        <div class="about-grid">
+          <div class="about-card glass-card reveal">
+            <div class="card-icon">🎯</div>
+            <h3 class="card-title" data-translate="about.mission_title">Misi Kami</h3>
+            <p class="card-text" data-translate="about.mission"></p>
+          </div>
+          <div class="about-card glass-card reveal reveal--delay-1">
+            <div class="card-icon">🌍</div>
+            <h3 class="card-title" data-translate="about.vision_title">Visi Kami</h3>
+            <p class="card-text" data-translate="about.vision"></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services section" id="services">
+      <div class="container">
+        <div class="section-header reveal">
+          <h2 class="section-title" data-translate="services.title">Perkhidmatan Kami</h2>
+          <div class="section-divider"></div>
+          <p class="section-subtitle" data-translate="services.subtitle"></p>
+        </div>
+        <div class="services-grid" id="services-list">
+          <!-- Dynamic rendering from info.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact section" id="contact">
+      <div class="container">
+        <div class="section-header reveal">
+          <h2 class="section-title" data-translate="contact.title">Hubungi Kami</h2>
+          <div class="section-divider"></div>
+          <p class="section-subtitle" data-translate="contact.subtitle"></p>
+        </div>
+        <div class="contact-grid">
+          <div class="contact-info glass-card reveal">
+            <div class="contact-item">
+              <span class="contact-label" data-translate="contact.email_label">E-mel</span>
+              <a href="#" class="contact-value" id="contact-email-link" data-translate="contact.email"></a>
+            </div>
+            <div class="contact-item">
+              <span class="contact-label" data-translate="contact.phone_label">Telefon</span>
+              <a href="#" class="contact-value" id="contact-phone-link" data-translate="contact.phone"></a>
+            </div>
+            <div class="contact-item">
+              <span class="contact-label" data-translate="contact.address_label">Alamat</span>
+              <span class="contact-value" data-translate="contact.address"></span>
+            </div>
+            <div class="social-links">
+              <a href="https://facebook.com/grupgerakkhas" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Facebook">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+              </a>
+              <a href="https://twitter.com/grupgerakkhas" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Twitter">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+              </a>
+            </div>
+          </div>
+          <div class="contact-map glass-card reveal reveal--delay-1">
+            <div class="map-placeholder">
+              <div class="map-pin">📍</div>
+              <p>Kuala Lumpur, Malaysia</p>
+              <div class="map-coordinates">3.1390° N, 101.6869° E</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer" id="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo" data-translate="footer.logo">
+            <span class="logo-icon">⚔️</span>
+            <span class="logo-text">Grup Gerak Khas</span>
+          </div>
+          <p class="footer-tagline" data-translate="footer.tagline"></p>
+        </div>
+        <div class="footer-links">
+          <a href="#hero" class="footer-link" data-translate="footer.link.home">Utama</a>
+          <a href="#about" class="footer-link" data-translate="footer.link.about">Tentang</a>
+          <a href="#services" class="footer-link" data-translate="footer.link.services">Perkhidmatan</a>
+          <a href="#contact" class="footer-link" data-translate="footer.link.contact">Hubungi</a>
+        </div>
+        <div class="footer-social">
+          <p class="footer-follow" data-translate="footer.follow">Ikuti kami di media sosial</p>
+          <div class="footer-social-links">
+            <a href="https://facebook.com/grupgerakkhas" target="_blank" rel="noopener noreferrer" aria-label="Facebook">📘</a>
+            <a href="https://twitter.com/grupgerakkhas" target="_blank" rel="noopener noreferrer" aria-label="Twitter">𝕏</a>
+            <a href="https://instagram.com/grupgerakkhas" target="_blank" rel="noopener noreferrer" aria-label="Instagram">📸</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="footer-divider"></div>
+        <p class="footer-copy" data-translate="footer.copy"></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Loaded from high-speed reliable CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+  <!-- Application logic & Info data -->
+  <script src="info.js"></script>
+  <script src="app.js"></script>
+
+</body>
 </html>
